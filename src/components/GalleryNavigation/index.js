@@ -1,28 +1,24 @@
 import { NavLink } from 'react-router-dom';
+import './GalleryNavigation.css';
 
 function GalleryNavigation({ galleries }) {
-    console.log(galleries);
-    console.log(galleries[0].gallerynumber);
-
+    console.log(galleries[0]);
     return (
         <nav>
-            <h1>Galleries</h1>
-            <NavLink to='/' exact={true}>Home</NavLink>
+            <NavLink exact to='/'>Home</NavLink>
             {
                 galleries.map((gallery) => {
-                    let id = gallery.gallerynumber;
                     return (
                         <NavLink
-                            to={`/galleries/${id}`}
-                            key={id}
-                            activeStyle={{ fontWeight: "bold" }}>
-                            {id}
+                            to={`/galleries/${gallery.id}`}
+                            key={gallery.id}
+                            activeClassName='active'>
+                            {`${gallery.id} - ${gallery.name}`}
                         </NavLink>
-                    );
+                    )
                 })
             }
-        </nav >
-
+        </nav>
     );
 }
 
