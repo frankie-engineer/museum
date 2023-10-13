@@ -1,6 +1,7 @@
 function Home() {
     return (
         <div>
+            <h1>Harvard Art Museum</h1>
             <h2>Look, but Don't Touch</h2>
             <p>
                 Please select a gallery in the navigation bar.

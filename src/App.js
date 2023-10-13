@@ -1,8 +1,9 @@
 import React from 'react';
 import GalleryNavigation from './components/GalleryNavigation';
 import GalleryView from './components/GalleryView';
+import Home from './components/Home'
 import harvardArt from './data/harvardArt';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 function App() {
   let galleries = harvardArt.records;
@@ -10,9 +11,20 @@ function App() {
   return (
     <div>
       <GalleryNavigation galleries={galleries} />
-      <Route path='/galleries/:galleryId'>
-        <GalleryView galleries={galleries} />
-      </Route>
+      <Switch>
+        <Route exact path='/'>
+          <Home />
+        </Route>
+
+        <Route path='/galleries/:galleryId'>
+          <GalleryView galleries={galleries} />
+        </Route>
+
+        <Route>
+          Page Not Found
+        </Route>
+      </Switch>
+
     </div>
   );
 }
