@@ -1,11 +1,30 @@
 import { useParams } from 'react-router-dom';
+import ArtImageTile from '../ArtImageTile';
+import { Route } from 'react-router-dom';
 
 function GalleryView({ galleries }) {
     let { galleryId } = useParams();
     let gallery = galleries.find((gallery) => Number(gallery.id) === Number(galleryId));
-
+    console.log('objects', gallery.objects);
     return (
-        <h2>{gallery.name}</h2>
+        <div>
+
+            <Route exact path={`/galleries/${galleryId}`}>
+                <h2>{gallery.name}</h2>
+
+                {
+                    gallery.objects.map((object) => {
+                        return (
+
+                            <ArtImageTile galleryId={galleryId} art={object} />
+
+
+                        );
+                    })
+                }
+            </Route>
+
+        </div>
     );
 }
 

@@ -1,0 +1,11 @@
+div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+img {
+    width: 250px;
+    height: fit-content;
+    padding: 10px;
+}
