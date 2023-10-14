@@ -4,12 +4,14 @@ import './ArtDescription.css'
 function ArtDescription({ gallery, art }) {
     return (
         <div>
-            <Link to={`/galleries/${gallery.id}`}>
-                {`⬅  Go Back to ${gallery.name} Gallery`}
-            </Link>
+            <h2>{`${art.title || 'Coming Soon'}`}</h2>
 
             <Link to={art.url}>
-                {`Learn more: ${art.title}`}
+                {`Learn more about this piece`}
+            </Link>
+
+            <Link to={`/galleries/${gallery.id}`}>
+                {`⬅  Go Back to ${gallery.name} Gallery`}
             </Link>
 
             <div className='image-container'>
