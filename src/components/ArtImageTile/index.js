@@ -1,4 +1,3 @@
-import './ArtImageTile.css';
 import { Link } from 'react-router-dom';
 
 function ArtImageTile({ galleryId, art }) {

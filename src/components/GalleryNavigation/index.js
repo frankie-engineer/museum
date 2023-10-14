@@ -13,7 +13,7 @@ function GalleryNavigation({ galleries }) {
                             to={`/galleries/${gallery.id}`}
                             key={gallery.id}
                             activeClassName='active'>
-                            {`${gallery.id} - ${gallery.name}`}
+                            {`${gallery.name}`}
                         </NavLink>
                     )
                 })
