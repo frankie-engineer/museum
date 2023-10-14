@@ -10,6 +10,7 @@ function App() {
 
   return (
     <div>
+      <h1>Harvard Art Museum</h1>
       <GalleryNavigation galleries={galleries} />
       <Switch>
         <Route exact path='/'>

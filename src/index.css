@@ -1,4 +1,44 @@
-#root {
+div {
     display: flex;
     flex-direction: column;
+    margin: 20px;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+a {
+    padding: 30px;
+    color: black;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+a:hover {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+img {
+    width: 250px;
+    height: fit-content;
+    padding: 5px;
+}
+
+
+img:hover {
+    width: 300px;
 }

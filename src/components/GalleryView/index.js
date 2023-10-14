@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import ArtImageTile from '../ArtImageTile';
 import { Route, Switch } from 'react-router-dom';
 import ArtDescription from '../ArtDescription';
+import './GalleryView.css';
 
 function GalleryView({ galleries }) {
     let { galleryId } = useParams();
@@ -10,17 +11,21 @@ function GalleryView({ galleries }) {
     return (
         <div>
             <Switch>
+
                 <Route exact path={`/galleries/${galleryId}`}>
                     <h2>{gallery.name}</h2>
-
-                    {
-                        gallery.objects.map((object) => {
-                            return (
-                                <ArtImageTile galleryId={galleryId} art={object} />
-                            );
-                        })
-                    }
+                    <h3>Click on any of the works below to learn more.</h3>
+                    <div className='image-container'>
+                        {
+                            gallery.objects.map((object) => {
+                                return (
+                                    <ArtImageTile galleryId={galleryId} art={object} />
+                                );
+                            })
+                        }
+                    </div>
                 </Route>
+
 
                 {
                     gallery.objects.map((object => {
